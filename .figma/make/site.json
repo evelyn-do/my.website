@@ -1,0 +1,10 @@
+{
+  "description": "Showcase your academic journey with a professional personal website designed for social psychology PhD students, featuring research, CV, and contact information.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
