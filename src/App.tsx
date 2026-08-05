@@ -7,20 +7,17 @@ import CVPage from './pages/CVPage'
 export type Page = 'home' | 'research' | 'cv'
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<Page>('home')
+  const [currentPage, _setCurrentPage] = useState<Page>('home')
 
-  const navigate = (page: Page) => {
-    setCurrentPage(page)
+  const navigate = (_page: Page) => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#FAF8F5' }}>
-      <Nav currentPage={currentPage} navigate={navigate} />
+      <Nav currentPage={currentPage} navigate={navigate} homeOnly />
       <main>
-        {currentPage === 'home' && <HomePage navigate={navigate} />}
-        {currentPage === 'research' && <ResearchPage />}
-        {currentPage === 'cv' && <CVPage />}
+        <HomePage navigate={navigate} />
       </main>
       <footer style={{
         borderTop: '1px solid #DDD8D0',

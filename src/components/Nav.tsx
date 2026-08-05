@@ -4,16 +4,21 @@ import type { Page } from '../App'
 interface NavProps {
   currentPage: Page
   navigate: (page: Page) => void
+  homeOnly?: boolean
 }
 
-export default function Nav({ currentPage, navigate }: NavProps) {
+export default function Nav({ currentPage, navigate, homeOnly = false }: NavProps) {
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const links: { label: string; page: Page }[] = [
+  const allLinks: { label: string; page: Page }[] = [
     { label: 'Home', page: 'home' },
     { label: 'Research', page: 'research' },
     { label: 'CV', page: 'cv' },
   ]
+
+  const links = homeOnly
+    ? allLinks.filter(l => l.page === 'home')
+    : allLinks
 
   const handleNav = (page: Page) => {
     navigate(page)
