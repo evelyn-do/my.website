@@ -165,14 +165,14 @@ export default function HomePage({ navigate }: HomePageProps) {
 
           {/* Profile photo */}
           <div style={{
-            width: '192px',
+            width: '230px',
             flexShrink: 0,
           }}
             className="hero-photo"
           >
             <div style={{
-              width: '192px',
-              height: '230px',
+              width: '230px',
+              height: '276px',
               backgroundColor: '#E8DDD5',
               overflow: 'hidden',
             }}>
